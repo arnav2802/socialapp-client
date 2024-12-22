@@ -10,19 +10,26 @@ export default function LoginPage() {
     const {setUserInfo} = useContext(UserContext);
     async function login(ev) {
         ev.preventDefault();
-        const response = await fetch(`${API_URL}/login`, {
-            method: 'POST',
-            body: JSON.stringify({username, password}),
-            headers: {'Content-Type':'application/json'},
-            credentials: 'include',
-        });
-        if (response.ok) {
-            response.json().then(userInfo => {
+        try {
+            const response = await fetch(`${API_URL}/login`,  {
+                mode: 'no-cors',
+                method: 'POST',
+                credentials: 'include',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify({username, password}),
+            });
+            if (response.ok) {
+                const userInfo = await response.json();
                 setUserInfo(userInfo);
                 setRedirect(true);
-            });
-        } else {
-            alert('wrong credentials');
+            } else {
+                alert('wrong credentials');
+            }
+        } catch (error) {
+            console.error('Login error:', error);
+            alert('An error occurred during login');
         }
     }
 

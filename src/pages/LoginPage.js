@@ -11,8 +11,8 @@ export default function LoginPage() {
     async function login(ev) {
         ev.preventDefault();
         try {
-            const response = await fetch(`${API_URL}/login`,  {
-                mode: 'no-cors',
+            const response = await fetch(`${API_URL}/login`,  {mode: 'no-cors'}, {
+
                 method: 'POST',
                 credentials: 'include',
                 headers: {

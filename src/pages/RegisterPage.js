@@ -5,7 +5,7 @@ export default function RegisterPage() {
     const [username, setUsername] = useState('');
     const [password, setPassword] = useState('');
     async function register(e) {e.preventDefault();
-    const response = await fetch(`${API_URL}/register`,{
+    const response = await fetch(`${API_URL}/register`, {mode: 'no-cors'},{
         method:'POST',
             body: JSON.stringify( {username, password}),
             headers: {'Content-Type': 'application/json'}, }

@@ -153,3 +153,29 @@ div.post-page a.edit-btn{
 a svg{
     height:20px;
 }
+
+.summaries {
+    margin: 15px 0;
+}
+
+.user-summary, .ai-summary {
+    margin-bottom: 15px;
+}
+
+.user-summary h4, .ai-summary h4 {
+    font-size: 0.9rem;
+    color: #666;
+    margin-bottom: 5px;
+}
+
+.user-summary p, .ai-summary p {
+    margin: 0;
+    line-height: 1.6;
+}
+
+.ai-summary {
+    background: #f9f9f9;
+    padding: 10px;
+    border-radius: 4px;
+    border-left: 3px solid #007bff;
+}

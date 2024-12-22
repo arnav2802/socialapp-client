@@ -3,6 +3,7 @@ import 'react-quill/dist/quill.snow.css';
 import {useState} from "react";
 import {Navigate} from "react-router-dom";
 import Editor from "../Editor";
+import {API_URL} from "../config";
 
 
 export default function CreatePost() {
@@ -18,7 +19,7 @@ export default function CreatePost() {
         data.set('content', content);
         data.set('file', files[0]);
         ev.preventDefault();
-        const response = await fetch('http://localhost:4000/post', {
+        const response = await fetch(`${API_URL}/post`, {
             method: 'POST',
             body: data,
             credentials: 'include',

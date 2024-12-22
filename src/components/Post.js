@@ -1,4 +1,5 @@
 import {Link} from "react-router-dom";
+import {API_URL} from "../config";
 
 export default function Post({_id,title,summary,aiSummary,cover,content,createdAt,author}) {
 
@@ -6,7 +7,7 @@ export default function Post({_id,title,summary,aiSummary,cover,content,createdA
         <div className="post">
             <div className="image">
                 <Link to={`/post/${_id}`}>
-                    <img src={'http://localhost:4000/'+cover} alt=""/>
+                    <img src={`${API_URL}`+cover} alt=""/>
                 </Link>
             </div>
             <div className="texts">

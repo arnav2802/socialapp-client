@@ -23,6 +23,9 @@ export default function CreatePost() {
             method: 'POST',
             body: data,
             credentials: 'include',
+            headers: {
+                'Accept': 'application/json',
+            }
         });
         if (response.ok) {
             setRedirect(true);

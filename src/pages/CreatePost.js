@@ -1,4 +1,4 @@
-import ReactQuill from "react-quill";
+
 import 'react-quill/dist/quill.snow.css';
 import {useState} from "react";
 import {Navigate} from "react-router-dom";
@@ -19,7 +19,8 @@ export default function CreatePost() {
         data.set('content', content);
         data.set('file', files[0]);
         ev.preventDefault();
-        const response = await fetch(`${API_URL}/post`, {
+        const response = await fetch(`${API_URL}/post`,  {
+            mode: 'no-cors',
             method: 'POST',
             body: data,
             credentials: 'include',

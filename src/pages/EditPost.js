@@ -33,6 +33,7 @@ export default function EditPost() {
             data.set('file', files?.[0]);
         }
         const response = await fetch(`${API_URL}post`, {
+            mode: 'no-cors',
             method: 'PUT',
             body: data,
             credentials: 'include',

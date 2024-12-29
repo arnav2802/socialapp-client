@@ -12,7 +12,7 @@ export default function LoginPage() {
         ev.preventDefault();
         try {
             const response = await fetch(`${API_URL}/login`,  {
-                mode: "no-cors",
+
                 method: 'POST',
                 credentials: 'include',
                 headers: {
